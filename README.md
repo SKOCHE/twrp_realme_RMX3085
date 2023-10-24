@@ -18,10 +18,4 @@
 - Terminal/Console
 - External Storage (SD and OTG)
 
-
-- To all of the tester who patiently test and send logs.
-  - 一護 黒崎
-  - AdamsProStudio
-  - Ivan Avetisov
-
 Telegram Community: https://t.me/Realme8Discussion
