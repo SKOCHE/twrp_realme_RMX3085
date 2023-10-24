@@ -15,7 +15,7 @@
 # limitations under the License.
 #
 
-DEVICE_PATH := device/realme/nashc
+DEVICE_PATH := device/realme/RMX3085
 
 # For building with minimal manifest
 ALLOW_MISSING_DEPENDENCIES := true
