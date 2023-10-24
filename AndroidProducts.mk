@@ -5,4 +5,4 @@
 PRODUCT_MAKEFILES := \
     $(LOCAL_DIR)/twrp_nashc.mk
 
-COMMON_LUNCH_CHOICES := twrp_nashc-eng
+COMMON_LUNCH_CHOICES := twrp_RMX3085-eng
