@@ -30,13 +30,24 @@ PRODUCT_BRAND := realme
 PRODUCT_MODEL := RMX3085
 PRODUCT_MANUFACTURER := realme
 
+# Shipping API level
+PRODUCT_SHIPPING_API_LEVEL := 31
+
+
 # Dynamic
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
 
 # fastbootd
 PRODUCT_PACKAGES += \
     android.hardware.fastboot@1.0-impl-mock \
+    android.hardware.fastboot@1.0-impl-mock.recovery \
     fastbootd
+
+# Bypass anti-rollback ROMs protection
+# Set build date to Jan 1 2009 00:00:00
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.build.date.utc=1230768000 \
+    ro.bootimage.build.date.utc=0
 
 PRODUCT_SYSTEM_PROPERTY_BLACKLIST := \
     ro.product.device \

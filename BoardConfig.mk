@@ -147,8 +147,8 @@ BOARD_ROOT_EXTRA_FOLDERS += metadata my_bigball my_carrier my_company my_enginee
 
 # Hack: prevent anti rollback
 PLATFORM_SECURITY_PATCH := 2099-12-31
-VENDOR_SECURITY_PATCH := $(PLATFORM_SECURITY_PATCH)
-PLATFORM_VERSION := 99.87.36
+VENDOR_SECURITY_PATCH := 2099-12-31
+PLATFORM_VERSION := 16.1.0
 PLATFORM_VERSION_LAST_STABLE := $(PLATFORM_VERSION)
 TW_INCLUDE_CRYPTO := true
 TW_INCLUDE_CRYPTO_FBE := true
@@ -160,6 +160,18 @@ BOARD_ROOT_EXTRA_FOLDERS += metadata
 TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/recovery/root/system/etc/recovery.fstab
 BOARD_HAS_LARGE_FILESYSTEM := true
 TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"
+# Additional binaries & libraries needed for recovery
+     TARGET_RECOVERY_DEVICE_MODULES += \
+     libkeymaster4 \
+     libpuresoftkeymasterdevice \
+     ashmemd_aidl_interface-cpp \
+     libashmemd_client
+
+  TW_RECOVERY_ADDITIONAL_RELINK_LIBRARY_FILES += \
+   $(TARGET_OUT_SHARED_LIBRARIES)/libkeymaster4.so \
+   $(TARGET_OUT_SHARED_LIBRARIES)/libpuresoftkeymasterdevice.so \
+   $(TARGET_OUT_SHARED_LIBRARIES)/ashmemd_aidl_interface-cpp.so \
+   $(TARGET_OUT_SHARED_LIBRARIES)/libashmemd_client.so
 
 # TWRP specific build flags
 TW_THEME := portrait_hdpi
